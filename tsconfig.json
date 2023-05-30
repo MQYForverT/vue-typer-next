@@ -1,0 +1,48 @@
+/**
+ * Vite 天然支持引入 .ts 文件。
+ * 注意：Vite 仅执行 .ts 文件的转译工作，并不执行 任何类型检查
+ */
+{
+  "compilerOptions": {
+    //target 用来指定ts被编译为es的版本
+    //“--target”选项的参数必须为 'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'esnext'。
+    "target": "ESNext",
+    "useDefineForClassFields": true, //从 Vite v2.5.0 开始，如果 TypeScript 的 target 是 ESNext 或 ES2022 及更新版本，此选项默认值则为 true
+    //moudle 用来指定要使用的模块化规范
+    "module": "ESNext",
+    //lib 用来指定项目中要使用的库一般不改
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    //忽略所有的声明文件（ *.d.ts）的类型检查
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    //允许 TypeScript 文件使用特定于 TypeScript 的扩展名（如 .ts、.mts 或 .tsx）相互导入。仅当启用 --noEmit 或 --emitDeclarationOnly 时才允许使用此标志
+    "allowImportingTsExtensions": true,
+    //是否生成编译后的文件
+    "noEmit": true,
+    //允许导入扩展名为“.json”的模块
+    "resolveJsonModule": true,
+    //将每个文件作为单独的模块（与“ts.transpileModule”类似）
+    "isolatedModules": true,
+    //在 `.tsx`文件里支持JSX： `"React"`或 `"Preserve"`
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    // 若有未使用的局部变量则抛错
+    "noUnusedLocals": true,
+    // 检若有未使用的函数参数则抛错
+    "noUnusedParameters": true,
+    //防止switch语句贯穿(即如果没有break语句后面不会执行)
+    "noFallthroughCasesInSwitch": true,
+  },
+  "include": [
+    "*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

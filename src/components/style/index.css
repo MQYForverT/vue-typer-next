@@ -1,0 +1,25 @@
+
+.content {
+    display: flex;
+  }
+  
+  :deep(.cursorChar) {
+    color: #000000;
+    animation: typing 0.5s infinite;
+  }
+  
+  @keyframes typing {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .result {
+    font-size: 15px;
+    line-height: 1.75;
+    font-family: "Times New Roman", Times, serif;
+  }
