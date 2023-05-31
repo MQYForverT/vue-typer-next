@@ -25,9 +25,12 @@
     "vite-plugin-dts": "^2.3.0",
     "vue-tsc": "^1.6.5"
   },
-  "keyword": [
+  "keywords": [
+    "vue",
+    "vue3",
     "type",
     "typer",
+    "vue-type",
     "打字机"
   ]
 }
